@@ -1,11 +1,15 @@
 var express = require("express");
-
+var path =require("path");
 
 var app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'app/client/views'));
+app.set('view engine', 'jade');
+
 
 app.get("/", function(req, res){
-    res.send("app works");
+    res.render("index",{title: "CHATAPP"});
 });
 
 
