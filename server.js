@@ -9,6 +9,7 @@ require('./app/api/models/db');
 //routes
 var index = require("./app/client/routes/indexRoute");
 var api = require("./app/api/routes/apiRoute");
+var chat = require("./app/chat/routes/route");
 // view engine setup
 app.set('views', path.join(__dirname, 'app/client/views'));
 app.set('view engine', 'jade');
@@ -18,9 +19,7 @@ app.set('view engine', 'jade');
 app.use("/", index);
 app.use("/api", api);
 
-app.get('/chat', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+app.use('/chat', chat);
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
