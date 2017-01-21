@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title chatAPP
+    
+  body
+    
+    p Welcom #{title.name}
+    
+    ul
+      for product in title
+        li= product.name
+      else
+        li no books

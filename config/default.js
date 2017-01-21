@@ -1,4 +1,5 @@
 module.exports = {
     
-    url: 'mongodb://localhost/users'
+    url: '',//ad mongo url,
+    apiKey: ''//ad api key
 };
